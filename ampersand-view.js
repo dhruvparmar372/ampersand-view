@@ -391,6 +391,7 @@ assign(View.prototype, {
             set: function(fn) {
                 this._render = function() {
                     fn.apply(this, arguments);
+                    this._upsertBindings();
                     this._rendered = true;
                     return this;
                 };
